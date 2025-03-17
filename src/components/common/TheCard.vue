@@ -13,12 +13,14 @@ const props = defineProps({
 
 const isCreateNewProject = shallowRef(false)
 const selectOption = ref('')
+const title = ref('')
 
 const options = ref(['model 1', 'model 2', 'model 3'])
 
 const createProject = () => {
   if (!selectOption.value) return
-  localStorage.setItem('titleProject', selectOption.value)
+  localStorage.setItem('titleProject', title.value)
+  localStorage.setItem('selectedModel', selectOption.value)
   router.push('/new_project')
 }
 </script>
@@ -39,29 +41,31 @@ const createProject = () => {
       >
         <span>+</span><br />New project
       </button>
-      <div class="w-100 h-100 d-flex flex-column justify-content-between" v-else>
-        <div class="w-100 h-100">
-          <div class="title mb-2">
-            <p class="m-0">New project</p>
-            <span>Create project for better</span>
+      <Transition name="fade" v-else>
+        <div class="w-100 h-100 d-flex flex-column justify-content-between">
+          <div class="w-100 h-100">
+            <div class="title mb-2">
+              <p class="m-0">New project</p>
+              <span>Create project for better</span>
+            </div>
+            <div class="d-flex flex-column mb-3">
+              <label class="mb-2">Project name</label>
+              <input class="form-control" placeholder="e.g. Lab #1" v-model="title" />
+            </div>
+            <div class="d-flex flex-column">
+              <select placeholder="select model" class="form-control" v-model="selectOption">
+                <option value="" disabled selected>Select your option</option>
+                <option :value="option" v-for="option in options">{{ option }}</option>
+              </select>
+            </div>
           </div>
-          <div class="d-flex flex-column mb-3">
-            <label class="mb-2">Project name</label>
-            <input class="form-control" placeholder="e.g. Lab #1" />
-          </div>
-          <div class="d-flex flex-column">
-            <select placeholder="select model" class="form-control" v-model="selectOption">
-              <option value="" disabled selected>Select your option</option>
-              <option :value="option" v-for="option in options">{{ option }}</option>
-            </select>
+          <div>
+            <button @click="createProject" type="button" class="btn w-100 mt-2 btn-primary">
+              Create project
+            </button>
           </div>
         </div>
-        <div>
-          <button @click="createProject" type="button" class="btn w-100 mt-2 btn-primary">
-            Create project
-          </button>
-        </div>
-      </div>
+      </Transition>
     </div>
   </div>
 </template>

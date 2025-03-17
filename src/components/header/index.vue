@@ -15,7 +15,7 @@ const logOut = () => {
         <div class="count me-2">
           <span>10 Credits</span>
         </div>
-        <div :class="$style.contactUs" class="me-5">
+        <div :class="$style.contactUs" class="">
           <span>Contact us to get more</span>
         </div>
       </div>
@@ -46,7 +46,7 @@ const logOut = () => {
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 6px;
-  padding: 5px 15px;
+  padding: 5px 5px;
 }
 
 .contactUs {

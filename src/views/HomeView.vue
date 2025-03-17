@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Header from '../components/header/index.vue'
 import TheCard from '../components/common/TheCard.vue'
 
@@ -12,6 +12,11 @@ const list = ref([
     isDemo: true,
   },
 ])
+
+onMounted(() => {
+  localStorage.removeItem('titleProject')
+  localStorage.removeItem('selectedModel')
+})
 </script>
 
 <template>
