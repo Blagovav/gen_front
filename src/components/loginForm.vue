@@ -7,6 +7,7 @@ const email = ref('')
 
 const clickHandler = () => {
   router.push({ name: 'home' })
+  localStorage.setItem('token', email.value)
 }
 </script>
 

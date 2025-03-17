@@ -1,4 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const logOut = () => {
+  localStorage.removeItem('token')
+  router.push({ name: 'login' })
+}
+</script>
 
 <template>
   <div class="d-flex justify-content-between align-items-center w-100 p-2" :class="$style.header">
