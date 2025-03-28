@@ -76,7 +76,7 @@ const createProject = () => {
   height: 410px;
   border-radius: 20px;
   border-width: 1px;
-  border: 1px solid rgba(244, 245, 247, 1);
+  border: 2px solid #e9e9eb;
   background-color: transparent;
   padding: 20px;
   position: relative;

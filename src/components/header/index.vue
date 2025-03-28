@@ -12,7 +12,7 @@ const logOut = () => {
     <div :class="$style.logo"></div>
     <div class="d-flex">
       <div :class="$style.info">
-        <div class="count me-2">
+        <div :class="$style.count" class="count me-2">
           <span>10 Credits</span>
         </div>
         <div :class="$style.contactUs" class="">
@@ -49,6 +49,10 @@ const logOut = () => {
   padding: 5px 5px;
 }
 
+.count {
+  color: rgba(51, 65, 85, 1);
+}
+
 .contactUs {
   background-color: rgba(255, 255, 255, 1);
   padding: 5px;
@@ -62,5 +66,6 @@ const logOut = () => {
   border-radius: 6px;
   padding: 5px 15px;
   background-color: transparent;
+  color: rgba(15, 23, 42, 1);
 }
 </style>

@@ -40,19 +40,18 @@
 .backgroundWrapper {
   display: grid;
   border-radius: 45px;
-  grid-template-rows: auto 320px 320px auto;
-  grid-template-columns: auto 296px 296px auto;
+  grid-template-rows: 126px 323px 323px 167px;
+  grid-template-columns: 126px 281px 281px 82px;
   width: 100%;
   height: 100%;
   gap: 10px;
 }
 
 .backgroundImage {
-  border-radius: 45px;
   background-image: url('../assets/login_background.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100%;
 }
 
 .backgroundImage.text {
@@ -97,6 +96,7 @@
   background-image: url('../assets/background/5.png');
 }
 .img6 {
+  border-radius: 45px;
   background-image: url('../assets/background/6.png');
 }
 .img7 {
@@ -113,6 +113,7 @@
   background-image: url('../assets/background/10.png');
 }
 .img11 {
+  border-radius: 45px;
   background-image: url('../assets/background/11.png');
 }
 .img12 {
